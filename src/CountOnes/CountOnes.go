@@ -14,7 +14,7 @@ func init() {
 		this_string := fmt.Sprintf("%-8s", strconv.FormatInt(i,2) )
 		unos := 0
 		for j:= 0; j < 8; j++ {
-			if ( this_string[j] == '1' ) {
+			if  this_string[j] == '1'  {
 				unos++
 			}
 		}
