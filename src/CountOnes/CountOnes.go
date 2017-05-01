@@ -37,3 +37,11 @@ func count( cadena string ) int {
 	}
 	return unos
 }
+
+// Valid only for multiples of 8
+func recursive_count( cadena string ) int {
+	if len(cadena) <= 8 {
+		return unos_8bits[ cadena ]
+	}
+	return recursive_count( cadena[:len(cadena)/2] ) + recursive_count(  cadena[len(cadena)/2:] )
+}

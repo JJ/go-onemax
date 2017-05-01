@@ -19,6 +19,13 @@ func TestLonger(t *testing.T) {
 	}
 }
 
+func TestLongest(t *testing.T) {
+	t.Log("Test 32 bits")
+	if ones := recursive_count("11111111111111110000000000000000"); ones != 16 {
+		t.Error("Esperaba 16, pero obtuve ", ones)
+	}
+}
+
 func TestZero(t *testing.T) {
 	t.Log("Test 0")
 	if cero := count("00000000000000000000000000000000000000000"); cero != 0 {
