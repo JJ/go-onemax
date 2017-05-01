@@ -23,7 +23,7 @@ func init() {
 }
 
 // Check out https://gobyexample.com/command-line-arguments
-func count( cadena string ) int {
+func Count( cadena string ) int {
 	unos := 0
 //	fmt.Printf( "Cadena longitud %d ", len( cadena ))
 	if len( cadena ) > 8  {
