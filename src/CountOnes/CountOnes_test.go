@@ -4,6 +4,12 @@ import (
 	"testing"
 )
 
+func TestVeryShort(t *testing.T) {
+	t.Log("Test 4 bits")
+	if ones_4bits := count("1010"); ones_4bits != 2 {
+		t.Error("Esperaba 4, pero obtuve ", ones_4bits)
+	}
+}
 
 func TestShort(t *testing.T) {
 	t.Log("Test 8 bits")

@@ -7,11 +7,11 @@ import (
 
 var unos_8bits = make(map[string]int)
 
-// Initialize 8 bit values
+// Initialize 8 bit values for caching
 func init() {
 	var i int64
 	for i = 0; i < 256; i++ {
-		this_string := fmt.Sprintf("%-8s", strconv.FormatInt(i,2) )
+		this_string := fmt.Sprintf("%08s", strconv.FormatInt(i,2) )
 		unos := 0
 		for j:= 0; j < 8; j++ {
 			if  this_string[j] == '1'  {
@@ -25,7 +25,7 @@ func init() {
 // Check out https://gobyexample.com/command-line-arguments
 func count( cadena string ) int {
 	unos := 0
-	fmt.Printf( "Cadena longitud %d ", len( cadena ))
+//	fmt.Printf( "Cadena longitud %d ", len( cadena ))
 	if len( cadena ) > 8  {
 		for _, element := range cadena {
 			if ( element == '1' ) {
@@ -33,6 +33,10 @@ func count( cadena string ) int {
 			}
 		}
 	} else {
+		if len(cadena) < 8 {
+			cadena = fmt.Sprintf("%08s", cadena )
+		}
+//		fmt.Println( cadena )
 		unos = unos_8bits[ cadena ]
 	}
 	return unos
