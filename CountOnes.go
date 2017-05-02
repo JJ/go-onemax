@@ -1,3 +1,7 @@
+/* CountOnes - provides different ways of counting ones in a string
+   with 0s and ones 
+*/
+
 package CountOnes
 
 import (
@@ -42,7 +46,8 @@ func Count( cadena string ) int {
 	return unos
 }
 
-// Valid only for multiples of 8
+// Valid only for multiples of 8, counts the number of ones
+// Internal for the time being. 
 func recursive_count( cadena string ) int {
 	if len(cadena) <= 8 {
 		return unos_8bits[ cadena ]
